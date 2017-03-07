@@ -70,9 +70,8 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Unity.StaticProxyExtension, Version=0.2.0.17, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.StaticProxy.0.2.0.17-pre\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Unity.StaticProxyExtension.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Unity.StaticProxyExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.StaticProxy.0.2.1.0\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Unity.StaticProxyExtension.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
