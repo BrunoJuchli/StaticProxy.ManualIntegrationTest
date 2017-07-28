@@ -2,6 +2,8 @@
 {
     using System;
 
+    using FluentAssertions;
+
     using Microsoft.Practices.Unity;
 
     using Ninject;
@@ -22,7 +24,9 @@
 
         private static void TestNinject()
         {
-            Console.WriteLine("ninject");
+            const string ExpectedString = "Ninject";
+
+            Console.WriteLine(ExpectedString);
 
             var kernel = new StandardKernel();
 
@@ -31,13 +35,17 @@
 
             var instance = kernel.Get<Proxied>();
 
-            instance.Foo();
+            instance.FooGeneric<string>(ExpectedString).Should().Be(ExpectedString);
+
+            instance.Foo(15).Should().Be(15);
         }
 
         private static void TestUnity()
         {
+            const string ExpectedString = "Unity";
+
             Console.WriteLine();
-            Console.WriteLine("unity");
+            Console.WriteLine(ExpectedString);
 
             var container = new UnityContainer();
             container.AddNewExtension<StaticProxyExtension>();
@@ -46,7 +54,9 @@
 
             var instance = container.Resolve<Proxied>();
 
-            instance.Foo();
+            instance.FooGeneric<string>(ExpectedString).Should().Be(ExpectedString);
+
+            instance.Foo(335).Should().Be(335);
         }
     }
 }
